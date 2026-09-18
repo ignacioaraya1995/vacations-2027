@@ -119,5 +119,16 @@
     "license_url": "https://unsplash.com/license",
     "changes": "Resized; displayed with CSS crop.",
     "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "amazon",
+    "subject": "Río Tambopata, Madre de Dios, Perú",
+    "file": "assets/photos/amazon.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tambopata_River,_Peru..jpg",
+    "artist": "Tim Buss",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "changes": "",
+    "downloaded_at": ""
   }
 ]

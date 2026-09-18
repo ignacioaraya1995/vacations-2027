@@ -9,7 +9,7 @@ Actualizado al cierre del 18/09/2026.
 - Prioridad al costo, con itinerario realizable. Se aceptan low-cost, billetes separados y cambios de aeropuerto si el ahorro compensa riesgos y traslados.
 - **Toda escala debe tener al menos tres horas**; ampliar cuando los trámites concretos lo exijan. No asumir protección por compartir aerolínea o resultado de búsqueda. `self_transfer: null` significa desconocido.
 - Evaluar ampliar escalas de aproximadamente 24 h a unas 48 h para visitar. Reportar el tiempo real, días consumidos, hotel, transporte y efecto sobre los cinco destinos.
-- Debe cruzarse el Pacífico para la vuelta al mundo principal. Regresos por Europa se identifican como alternativa sin circunnavegación.
+- Debe cruzarse el Pacífico para la vuelta al mundo principal. Europa, cuando se incluye, va antes de Estambul (hacia el este).
 - Económica y mochila/equipaje de mano; dimensiones y peso exactos pendientes. El filtro de cabina no acredita la franquicia final.
 - No volver a incorporar automáticamente los antiguos destinos europeos, Egipto o las siete maravillas. El Cristo Redentor fue descartado.
 
@@ -28,7 +28,7 @@ Actualizado al cierre del 18/09/2026.
 - HTML local con buena presentación, fotos reales, banderas y nombres de ambos.
 - Pestañas para reducir scroll; margen superior de 12 px al quedar sticky.
 - Globo interactivo con ruta, escalas, ciudades seleccionables y flechas para indicar el sentido.
-- Roma/Coliseo, París/Torre Eiffel, Londres/Big Ben, Madrid y Barcelona son escenarios opcionales para comparar; aún sin precios ni encaje confirmado. Guardar interés no los añade a la ruta.
+- 18/09/2026: el usuario pidió viajes realmente distintos (no variantes de un vuelo), incluir Europa (Roma, París, Barcelona, Londres y Madrid) comparando tren y avión, la Amazonía y un súper viaje, y eliminar la página de escenarios. Hecho: cuatro viajes y sin pestaña de escenarios.
 - Separar siempre tarifas observadas, estimaciones y gastos desconocidos. Mantener fuentes y fecha/hora original de consulta.
 
 ## Autorización
@@ -39,4 +39,19 @@ Actualizado al cierre del 18/09/2026.
 
 ## Estado actual
 
-Segunda pasada del 18/09/2026: 69 consultas para dos adultos (49 iniciales y 20 de verificación) y lectura de vendedores en las páginas de compra de Google. Informe en `outputs/revision-destinos-febrero-2027.md` y `.json`. La interfaz presenta cinco alternativas; la predeterminada es «Menor realizable»: US$5.506 para dos, salida 2/02, regreso 28/02, Cathay Pacific PEK–HKG–HND en un solo billete (US$94 menos que el directo), una noche en LA con provisión US$200–350. «Menor aéreo» (US$5.399) sigue condicionado a U-Connect. «Más Japón» (US$5.542) vuelve el 2/03 con dos noches más en Japón fuera del subtotal. Terracota y el regreso por Europa se mantienen como comparación. Nada comprado ni reservado.
+Ver «Opciones vigentes» abajo (se regenera desde el JSON con `python3 work/update_docs_viajes.py`).
+
+## Opciones vigentes
+
+<!-- viajes:start -->
+**Cuatro viajes distintos (18/09/2026).** Pasajes observados para dos adultos; total con alojamiento, trenes y extras estimados (fuentes en `work/viajes-supuestos.json`).
+
+| Viaje | Fechas | Días | Destinos | Pasajes para dos (observado) | Total estimado para dos |
+|---|---|---:|---:|---:|---:|
+| Clásico | 02/02–28/02 | 27 | 5 | 5.506 | 7.258–7.871 |
+| Amazonía + Asia | 02/02–04/03 | 31 | 6 | 6.359 | 9.335–10.524 |
+| Europa + Asia | 16/01–28/02 | 44 | 10 | 5.600 | 10.849–12.808 |
+| Súper viaje | 16/01–05/03 | 49 | 12 | 7.047 | 13.639–16.201 |
+
+Predeterminado: Clásico. Europa obliga a salir en enero y la Amazonía vuelve en marzo; solo el Clásico cabe en la ventana 30/01–02/03. Nada comprado ni reservado.
+<!-- viajes:end -->

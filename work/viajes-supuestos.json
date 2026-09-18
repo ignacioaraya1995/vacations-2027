@@ -1,0 +1,337 @@
+{
+ "_note": "Supuestos documentados para work/build_viajes.py. Tarifas de vuelos: observadas (no van aquí). Todo lo demás es estimación con fuente.",
+ "seller_notes": {
+  "SCL-LHR-IST 2027-02-02": "Google, 2 adultos: British Airways Basic Economy US$1.686, único vendedor; pieza de mano gratis, 1.ª maleta US$120 por pasajero. La web de BA mostró US$1.685,80.",
+  "SAW-AMM 2027-02-06": "Google, 2 adultos: Pegasus Saver US$311 con pieza de mano y 1.ª maleta; Light US$249 cobra ambas. Aviso de posibles interrupciones aéreas.",
+  "AMM-SHJ-DEL 2027-02-11": "Google, 2 adultos: Air Arabia US$424 (incluye JOD 9 de gestión); pieza de mano gratis, maleta con cargo. Aviso de posibles interrupciones aéreas.",
+  "DEL-BKK-PEK 2027-02-16": "Google, 2 adultos: THAI US$700 como un solo itinerario; pieza de mano y 1.ª maleta gratis.",
+  "PEK-HKG-HND 2027-02-21": "Google, 2 adultos: Cathay Pacific US$442, un solo vendedor; pieza de mano y 1.ª maleta gratis. Emitir como un billete.",
+  "NRT-LAX 2027-02-26": "Google, 2 adultos: ZIPAIR US$817, único vendedor; pieza de mano gratis, maleta con cargo.",
+  "NRT-LAX 2027-02-27": "ZIPAIR, mismo vuelo; pieza de mano gratis, maleta con cargo.",
+  "LAX-PTY-SCL 2027-02-27": "Google, 2 adultos: Copa US$1.126; pieza de mano gratis, maleta con cargo.",
+  "XIY-CAN-HND 2027-02-23": "Google, 2 adultos: China Southern US$978; pieza de mano y 2 maletas gratis.",
+  "SCL-BOG-LHR 2027-01-16": "Google, 2 adultos: Avianca US$1.424, un vendedor; pieza de mano gratis, sin maleta facturada. Marcado «bajo» (US$1.156 bajo lo habitual).",
+  "MAD-FCO 2027-01-30": "Google, 2 adultos: Iberia Economy Basic US$89 con pieza de mano; maleta con cargo.",
+  "FCO-SAW 2027-02-03": "Google, 2 adultos: Pegasus Saver US$267 con pieza de mano y 1.ª maleta. AJet cuesta US$158 pero cobra la pieza de mano.",
+  "LAX-LIM 2027-02-27": "Google, 2 adultos: LATAM US$1.259 (punto de venta EE. UU.) o US$1.248 (Chile); pieza de mano gratis. Vuelo nocturno.",
+  "LAX-LIM 2027-02-28": "LATAM, mismo vuelo nocturno; pieza de mano gratis.",
+  "LIM-PEM 2027-03-01": "Google, 2 adultos: LATAM US$160 (Chile US$159); pieza de mano gratis, maleta con cargo. Comprar separado del vuelo internacional, con una noche en Lima.",
+  "LIM-PEM 2027-03-02": "LATAM nacional; comprar separado del vuelo internacional, con una noche en Lima entre ambos.",
+  "PEM-LIM 2027-03-03": "LATAM nacional. Con PEM–LIM–SCL en un solo billete LATAM se podría volver el mismo día.",
+  "PEM-LIM 2027-03-04": "LATAM nacional. Con PEM–LIM–SCL en un solo billete LATAM se podría volver el mismo día.",
+  "LIM-SCL 2027-03-04": "Google, 2 adultos: LATAM directo US$410 (Chile US$407); pieza de mano gratis, maleta con cargo.",
+  "LIM-SCL 2027-03-05": "LATAM directo."
+ },
+ "card_notes": {
+  "clasico": "Base verificada con los vendedores y la única que cabe en la ventana acordada. Ajustes de un solo vuelo, abajo.",
+  "amazonia_asia": "El Clásico más Lima y 3 días en Tambopata al volver. Vuelve el 4/03, dos días después de la ventana.",
+  "europa_asia": "Londres y Roma con 3 días completos; París, Barcelona y Madrid con 2 más la tarde de llegada. Con 3 en todas: salir el 13/01, +US$730 en el vuelo a Londres.",
+  "super_viaje": "Europa, Asia con Xi’an y la Amazonía, del 16/01 al 5/03. En Europa, 2 días completos en París, Barcelona y Madrid."
+ },
+ "stay_notes": {
+  "london": [
+   "Llegada 14:35 desde Bogotá.",
+   "ETA del Reino Unido obligatoria para chilenos: £20 por persona, válida 2 años."
+  ],
+  "paris": [
+   "Eurostar desde St Pancras a Gare du Nord."
+  ],
+  "barcelona": [
+   "Tren directo desde París Gare de Lyon a Barcelona Sants."
+  ],
+  "madrid": [
+   "AVE, Ouigo o iryo desde Barcelona Sants."
+  ],
+  "rome": [
+   "Vuelo a Estambul Sabiha (SAW) el 3/02, Pegasus Saver."
+  ],
+  "istanbul": [
+   "Santa Sofía, Mezquita Azul, Cisterna, Bósforo y barrios.",
+   "El 6 se vuela a Amán a las 23:50 desde SAW."
+  ],
+  "petra": [
+   "Llegada a Amán de madrugada: reservar la noche previa o esperar el check-in.",
+   "Petra el 8, Wadi Rum el 9 y regreso a Amán el 10: tres jornadas en la región con traslados.",
+   "Ramadán previsto desde el 8/02; revisar la situación regional antes de emitir."
+  ],
+  "agra": [
+   "Llegada a Delhi 02:40 del 12: ese día es descanso.",
+   "Taj Mahal el 14 o 15: cierra los viernes."
+  ],
+  "beijing": [
+   "Llegada 05:20 del 17: día de recuperación.",
+   "El Año Nuevo chino (6/02) queda antes; revalidar el ingreso a China para 2027."
+  ],
+  "xian": [
+   "Tren desde Beijing el 21 (horario por confirmar); Terracota el 22.",
+   "Vuelo a Haneda el 23 vía Cantón."
+  ],
+  "tokyo": [
+   "Llegada a Haneda por la noche; salida por Narita.",
+   "Mejor una excursión cercana que otra mudanza de hotel."
+  ],
+  "la": [
+   "Ambos con ESTA vigente."
+  ],
+  "lima": [
+   "Separa el vuelo internacional del nacional; aprovechar la comida limeña."
+  ],
+  "amazon": [
+   "Lodge con traslados en bote, comidas y excursiones guiadas.",
+   "Febrero y marzo son temporada de lluvias (unos 330 mm en febrero).",
+   "Vacuna de fiebre amarilla recomendada (no exigida para entrar a Perú) y riesgo de malaria: consultar profilaxis.",
+   "Chilenos entran a Perú con cédula o pasaporte."
+  ]
+ },
+ "adjustments": [
+  "Clásico con AJet vía Ankara el 7/02: US$237 frente a US$311 de Pegasus, pero AJet cobra la pieza de mano y todo se corre un día. No es un ahorro confirmado.",
+  "Clásico con Aegean vía Atenas el 7/02: −US$29 con pieza de mano, a cambio de 11 h 10 en vez de 2 h 35.",
+  "HK Express Beijing–Tokio: −US$107 solo si U-Connect se confirma y su cargo es bajo.",
+  "Volver el 2/03 con 2 días más en Tokio: +US$36 de pasajes y dos noches más.",
+  "Europa con 3 días completos en cada ciudad: salir el 13/01; el vuelo a Londres sube a US$2.154 (+US$730).",
+  "Entrar a Europa por Madrid el 16/01: SCL–MAD US$2.339 (Iberia directo), US$915 más que Avianca a Londres.",
+  "Lima con AeroMexico vía Ciudad de México: −US$339, con 10 h 45 de escala nocturna.",
+  "Roma–Estambul con AJet: US$158 sin pieza de mano; Pegasus Saver US$267 la incluye."
+ ],
+ "purchase_timing": {
+  "headline": "Comprar ahora o en las próximas semanas; no después de mediados de noviembre.",
+  "points": [
+   "Google marcó «bajo» Cathay (US$445 menos de lo habitual), Thai (US$166 menos) y Air Arabia (US$119 menos); el resto, «típico». En low-cost los precios bajos rara vez vuelven: esos bloques primero.",
+   "Según datos de Google Flights, los internacionales tocan mínimo 49 días o más antes de salir y la ventana útil es de 2 a 8 meses. Hoy faltan 137 días; a mediados de noviembre, 76; en enero ya es tarde.",
+   "Febrero coincide con el Año Nuevo chino (6/02) y su temporada alta de viajes: los tramos por Asia suben al acercarse la fecha.",
+   "Recotizar y comprar los siete bloques en la misma sesión; todas las tarifas vistas son no reembolsables. Si Jordania preocupa, dejar SAW–AMM y AMM–DEL para el final: son los más baratos de reponer."
+  ],
+  "signals": [
+   [
+    "SCL–IST BA",
+    "típico"
+   ],
+   [
+    "SAW–AMM Pegasus",
+    "típico"
+   ],
+   [
+    "AMM–DEL Air Arabia",
+    "bajo"
+   ],
+   [
+    "DEL–PEK Thai",
+    "bajo"
+   ],
+   [
+    "PEK–HND Cathay",
+    "bajo"
+   ],
+   [
+    "NRT–LAX Zipair",
+    "típico"
+   ],
+   [
+    "LAX–SCL Copa / LATAM",
+    "típico"
+   ]
+  ],
+  "observed": "Señales de precio de Google Flights leídas el 18/09/2026",
+  "sources": [
+   [
+    "Google Flights, páginas de compra, 18/09/2026",
+    "https://www.google.com/travel/flights"
+   ],
+   [
+    "Análisis de datos de Google Flights (Thrifty Traveler)",
+    "https://thriftytraveler.com/guides/google-flights/data-analysis/"
+   ],
+   [
+    "Cuándo reservar con Google Flights (Going)",
+    "https://www.going.com/guides/best-time-to-book-with-google-flights"
+   ]
+  ]
+ },
+ "window_note_md": "La ventana acordada era salir entre el 30/01 y el 03/02 y volver entre el 26/02 y el 02/03. Solo el Clásico cabe entero. Europa obliga a salir el 16/01 y la Amazonía vuelve el 4 o 5/03.",
+ "la_provision_two_usd": [
+  200,
+  350
+ ],
+ "trains": {
+  "LON-PAR": {
+   "from": "london",
+   "to": "paris",
+   "label": "Londres → París",
+   "operator": "Eurostar",
+   "duration_min": 136,
+   "station_overhead_min": 105,
+   "typical_departure": "09:01",
+   "price_two_usd": [
+    136,
+    240
+   ],
+   "status": "Eurostar vende con 11 meses de anticipación: enero de 2027 ya está a la venta. Standard desde £51 por persona; rango de trabajo £51–90.",
+   "source_url": "https://www.seat61.com/trains-and-routes/london-to-paris-by-eurostar.htm",
+   "comparator": {
+    "flight": "Air France LHR–CDG 21/01",
+    "price_two_usd": 180,
+    "door_to_door_min": 260
+   },
+   "verdict": "Tren: más rápido centro a centro y ya a la venta."
+  },
+  "PAR-BCN": {
+   "from": "paris",
+   "to": "barcelona",
+   "label": "París → Barcelona",
+   "operator": "SNCF TGV directo",
+   "duration_min": 408,
+   "station_overhead_min": 60,
+   "typical_departure": "09:40",
+   "price_two_usd": [
+    89,
+    228
+   ],
+   "status": "Aún no a la venta: enero de 2027 abriría hacia mediados de octubre. Desde €39 por persona (2.ª clase anticipada) hasta €259 flexible; rango de trabajo €39–100. Unos 2 directos al día en invierno.",
+   "source_url": "https://www.seat61.com/trains-and-routes/paris-to-barcelona-by-train.htm",
+   "comparator": {
+    "flight": "Vueling CDG–BCN 24/01",
+    "price_two_usd": 241,
+    "door_to_door_min": 295
+   },
+   "verdict": "Tren si se compra al abrir la venta: más barato, pero unas 3 h más lento. Avión si se prioriza el tiempo."
+  },
+  "BCN-MAD": {
+   "from": "barcelona",
+   "to": "madrid",
+   "label": "Barcelona → Madrid",
+   "operator": "AVE / Iryo / Ouigo",
+   "duration_min": 180,
+   "station_overhead_min": 60,
+   "typical_departure": "09:00",
+   "price_two_usd": [
+    39,
+    137
+   ],
+   "status": "Venta de Renfe para enero de 2027 probablemente aún cerrada. AVE desde €17 por persona, Comfort desde €68; rango de trabajo €17–60. Hoy tarda unas 3 h por restricciones de velocidad.",
+   "source_url": "https://www.seat61.com/trains-and-routes/barcelona-to-madrid-by-train.htm",
+   "comparator": {
+    "flight": "Iberia BCN–MAD 27/01",
+    "price_two_usd": 123,
+    "door_to_door_min": 265
+   },
+   "verdict": "Tren: más rápido centro a centro y más barato."
+  },
+  "PEK-XIY": {
+   "from": "beijing",
+   "to": "xian",
+   "label": "Beijing → Xi’an",
+   "operator": "Tren de alta velocidad (G)",
+   "duration_min": 270,
+   "station_overhead_min": 90,
+   "typical_departure": "08:00",
+   "price_two_usd": [
+    160,
+    200
+   ],
+   "status": "Aún no a la venta. Referencia actual CNY480–593 por persona; horario por confirmar.",
+   "source_url": "https://www.travelchinaguide.com/china-trains/beijing-xian-highspeed.htm"
+  }
+ },
+ "lodging_two_usd": {
+  "london": [
+   209,
+   272
+  ],
+  "paris": [
+   189,
+   246
+  ],
+  "barcelona": [
+   210,
+   273
+  ],
+  "madrid": [
+   149,
+   194
+  ],
+  "rome": [
+   175,
+   228
+  ],
+  "istanbul": [
+   73,
+   95
+  ],
+  "petra": [
+   57,
+   74
+  ],
+  "agra": [
+   31,
+   40
+  ],
+  "beijing": [
+   77,
+   100
+  ],
+  "xian": [
+   38,
+   49
+  ],
+  "tokyo": [
+   117,
+   152
+  ],
+  "lima": [
+   59,
+   77
+  ]
+ },
+ "amazon_program_two_usd": [
+  1106,
+  1646
+ ],
+ "europe_authorizations_two_usd": [
+  53,
+  99
+ ],
+ "trains_note_md": "Puerta a puerta: tren = duración + 105 min (Eurostar pide llegar 60–90 min antes) o + 60 min (TGV y AVE, supuesto); avión = vuelo + 180 min (Heathrow recomienda 2 h antes en vuelos europeos, más traslados). Tarifas de tren para dos convertidas con €1 = US$1,14 y £1 = US$1,335.",
+ "sources_md": [
+  "Trenes: [Eurostar](https://www.seat61.com/trains-and-routes/london-to-paris-by-eurostar.htm), [París–Barcelona](https://www.seat61.com/trains-and-routes/paris-to-barcelona-by-train.htm), [Barcelona–Madrid](https://www.seat61.com/trains-and-routes/barcelona-to-madrid-by-train.htm), [apertura de ventas](https://www.seat61.com/european-train-booking-horizons.htm), [Beijing–Xi’an](https://www.travelchinaguide.com/china-trains/beijing-xian-highspeed.htm).",
+  "Alojamiento: promedio 3★ de Booking.com por ciudad, 18/09/2026 (enlaces en `work/viajes-supuestos.json`); rango = promedio a +30 %.",
+  "Amazonía: [Tambopata Ecolodge](https://www.tambopatalodge.com/en/rainforest-experience), [Posada Amazonas](https://www.rainforestexpeditions.com/peru-amazon-tours/posada-amazonas-suggested-classic-expedition-3-days-2-nights/), [CDC Perú: fiebre amarilla y malaria](https://wwwnc.cdc.gov/travel/destinations/traveler/none/peru).",
+  "Autorizaciones: [ETA del Reino Unido](https://www.gov.uk/eta) £20 por persona; [ETIAS](https://travel-europe.europa.eu/etias_en) aún sin fecha, €20 si entra en vigor (con período de transición).",
+  "Cambio: €1 = US$1,14 (conversiones de Google Vuelos) y £1 = US$1,335 ([17/09/2026](https://tradingeconomics.com/united-kingdom/currency)).",
+  "Heathrow: [llegar 2 h antes en vuelos europeos](https://www.heathrow.com/departures/checking-in)."
+ ],
+ "pending_md": [
+  "Recotizar todo el día de la compra (`python3 work/price_watch.py`) y comprar cada bloque como un solo billete.",
+  "Eurostar ya está a la venta; TGV París–Barcelona abriría a mediados de octubre y Renfe más tarde.",
+  "ETA del Reino Unido (£20 por persona) antes de viajar; ETIAS aún sin fecha.",
+  "China 2027: revalidar el tránsito de 240 h o tramitar visado. Jordania: revisar la situación regional.",
+  "Amazonía: reservar el lodge directo; fiebre amarilla y profilaxis de malaria según indicación médica."
+ ],
+ "fx": {
+  "EUR_USD": 1.14,
+  "EUR_basis": "Conversiones mostradas por Google Vuelos el 18/09/2026 (Iberia €78 = US$89; Aegean €243 = US$278; Pegasus €233 = US$267)",
+  "GBP_USD": 1.335,
+  "GBP_basis": "GBP/USD 1,3351 al 17/09/2026",
+  "GBP_source": "https://tradingeconomics.com/united-kingdom/currency"
+ },
+ "lodging_basis": {
+  "method": "Promedio de hoteles 3★ publicado por Booking.com (todas las fechas, toda la ciudad; «1 noche, 2 adultos»), consultado el 18/09/2026. Rango = promedio a promedio +30 % por ubicación céntrica. Petra = promedio de Wadi Musa (US$53) y Amán (US$61). India = Delhi (US$34) y Agra (US$28).",
+  "sources": {
+   "london": "https://www.booking.com/city/gb/london.html",
+   "paris": "https://www.booking.com/city/fr/paris.html",
+   "barcelona": "https://www.booking.com/city/es/barcelona.html",
+   "madrid": "https://www.booking.com/city/es/madrid.html",
+   "rome": "https://www.booking.com/city/it/rome.html",
+   "istanbul": "https://www.booking.com/city/tr/istanbul.html",
+   "petra": "https://www.booking.com/city/jo/wadi-musa.html",
+   "amman": "https://www.booking.com/city/jo/amman.html",
+   "agra": "https://www.booking.com/city/in/agra.html",
+   "delhi": "https://www.booking.com/city/in/new-delhi.html",
+   "beijing": "https://www.booking.com/city/cn/beijing.html",
+   "xian": "https://www.booking.com/city/cn/xi-an.html",
+   "tokyo": "https://www.booking.com/city/jp/tokyo.html",
+   "lima": "https://www.booking.com/city/pe/lima.html",
+   "la": "https://www.booking.com/city/us/los-angeles.html"
+  }
+ },
+ "amazon_basis": "Lodge en Tambopata 3 días / 2 noches, habitación doble, con comidas, traslados en bote desde el aeropuerto y excursiones guiadas: Tambopata Ecolodge US$543 por persona más US$10 de entrada a la reserva; Posada Amazonas desde US$813 por persona. Iquitos es similar (US$448–645 por persona)."
+}
