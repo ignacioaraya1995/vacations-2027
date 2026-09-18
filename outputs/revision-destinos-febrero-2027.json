@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-09-18T06:40:21.502354+00:00",
+  "created_at": "2026-09-18T13:34:00.254429+00:00",
   "travelers": 2,
   "documents": "Both travelers confirmed Chilean passport and valid ESTA",
-  "documented_two_adult_searches": 69,
+  "documented_two_adult_searches": 89,
   "verification_pass": "2026-09-18 06:05–06:06 UTC, 20 queries (13 re-checks, 7 new)",
   "seller_check": "Google Flights booking pages for two adults read in Chrome, 2026-09-18 06:20–06:31 UTC; see work/revision-destinos-20260918/vendedores-google-20260918.json",
   "departure_window": [
@@ -85,8 +85,68 @@
       "id": "cathay_marzo_lima",
       "airfare_two_adults_usd": 5498.0,
       "note": "cathay_marzo con LAX–LIM–SCL (LATAM, 10:10, escala 3 h 30): −US$44, llegada 2/03 06:55."
+    },
+    {
+      "id": "aegean_febrero",
+      "airfare_two_adults_usd": 5477.0,
+      "note": "cathay_febrero con IST–ATH–AMM (Aegean, 7/02 16:45–03:55, Atenas 7 h 20; US$278), AMM–DEL 12/02 y DEL–PEK 17/02 00:20. Todo se corre un día. Menor realizable del optimizador; no adoptado: US$29 por 8 h 35 más de viaje."
+    },
+    {
+      "id": "aegean_marzo_lima",
+      "airfare_two_adults_usd": 5469.0,
+      "note": "Igual, con regreso 2/03 vía Lima. Dos noches más en Japón fuera del subtotal."
+    },
+    {
+      "id": "aegean_aeromexico",
+      "airfare_two_adults_usd": 5467.0,
+      "note": "Aegean y regreso LAX–MEX–SCL 26/02 (AeroMexico): noche de 10 h en Ciudad de México y Tokio baja a 3 días."
     }
   ],
+  "price_watch": {
+    "stamp": "20260918T133136Z",
+    "stamp_label": "18/09 13:31",
+    "runs": 2,
+    "rows": [
+      {
+        "id": "ahorro_febrero",
+        "reference": 5399.0,
+        "now": 5395.0,
+        "delta": -4.0,
+        "notes": []
+      },
+      {
+        "id": "cathay_febrero",
+        "reference": 5506.0,
+        "now": 5502.0,
+        "delta": -4.0,
+        "notes": []
+      },
+      {
+        "id": "cathay_marzo",
+        "reference": 5542.0,
+        "now": 5537.0,
+        "delta": -5.0,
+        "notes": []
+      },
+      {
+        "id": "terracota_marzo",
+        "reference": 6078.0,
+        "now": 6073.0,
+        "delta": -5.0,
+        "notes": []
+      },
+      {
+        "id": "regreso_europa",
+        "reference": 5686.0,
+        "now": 6234.0,
+        "delta": 548.0,
+        "notes": [
+          "NRT–SCL 28/02: itinerario no visto; más barato válido US$2.673"
+        ]
+      }
+    ],
+    "how": "python3 work/price_watch.py (manual) o launchd con work/com.vacations2027.pricewatch.plist (no instalado)"
+  },
   "options": [
     {
       "id": "ahorro_febrero",
@@ -754,7 +814,13 @@
       "calendar_days": 27,
       "departure": "2027-02-02T13:15:00-03:00",
       "arrival": "2027-02-28T20:19:00-03:00",
-      "separate_ticket_lax_hours": 37.583333333333336
+      "separate_ticket_lax_hours": 37.583333333333336,
+      "recheck": {
+        "stamp": "20260918T133136Z",
+        "airfare_two_adults_usd": 5395.0,
+        "delta_usd": -4.0,
+        "notes": []
+      }
     },
     {
       "id": "cathay_febrero",
@@ -1438,7 +1504,13 @@
       "calendar_days": 27,
       "departure": "2027-02-02T13:15:00-03:00",
       "arrival": "2027-02-28T20:19:00-03:00",
-      "separate_ticket_lax_hours": 37.583333333333336
+      "separate_ticket_lax_hours": 37.583333333333336,
+      "recheck": {
+        "stamp": "20260918T133136Z",
+        "airfare_two_adults_usd": 5502.0,
+        "delta_usd": -4.0,
+        "notes": []
+      }
     },
     {
       "id": "cathay_marzo",
@@ -2097,7 +2169,13 @@
       "calendar_days": 29,
       "departure": "2027-02-02T13:15:00-03:00",
       "arrival": "2027-03-02T05:35:00-03:00",
-      "separate_ticket_lax_hours": 30.25
+      "separate_ticket_lax_hours": 30.25,
+      "recheck": {
+        "stamp": "20260918T133136Z",
+        "airfare_two_adults_usd": 5537.0,
+        "delta_usd": -5.0,
+        "notes": []
+      }
     },
     {
       "id": "terracota_marzo",
@@ -2754,6 +2832,12 @@
           160,
           200
         ]
+      },
+      "recheck": {
+        "stamp": "20260918T133136Z",
+        "airfare_two_adults_usd": 6073.0,
+        "delta_usd": -5.0,
+        "notes": []
       }
     },
     {
@@ -3406,7 +3490,7 @@
             "baggage_shown": null,
             "other_sellers": {}
           },
-          "seller_note": "Google no cargó los vendedores al revisar el 18/09; verificación pendiente."
+          "seller_note": "Google no cargó los vendedores al revisar el 18/09. Al recotizar a las 13:26 y 13:31 UTC este itinerario ya no apareció; el regreso válido más barato era US$2.673 (Qatar–American vía Doha y Miami)."
         }
       ],
       "airfare_two_adults_usd": 5686.0,
@@ -3415,7 +3499,15 @@
       "travel_hours_including_airport_connections": 113.83333333333333,
       "calendar_days": 29,
       "departure": "2027-02-02T13:15:00-03:00",
-      "arrival": "2027-03-02T09:20:00-03:00"
+      "arrival": "2027-03-02T09:20:00-03:00",
+      "recheck": {
+        "stamp": "20260918T133136Z",
+        "airfare_two_adults_usd": 6234.0,
+        "delta_usd": 548.0,
+        "notes": [
+          "NRT–SCL 28/02: itinerario no visto; más barato válido US$2.673"
+        ]
+      }
     }
   ]
 }

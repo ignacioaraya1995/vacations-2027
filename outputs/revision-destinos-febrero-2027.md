@@ -1,6 +1,6 @@
 # Revisión de destinos y vuelos para dos — febrero de 2027
 
-Consultas: 18/09/2026 (49 iniciales y 20 de verificación, todas para dos adultos, económica, filtro de una pieza de mano, escalas ≥ 3 h). Ambos con pasaporte chileno y ESTA vigente. Prioridad al costo total con flexibilidad de ±2 días. No se compró ni reservó.
+Consultas: 18/09/2026 (49 iniciales, 20 de verificación y 20 de barrido, todas para dos adultos, económica, filtro de una pieza de mano, escalas ≥ 3 h). Ambos con pasaporte chileno y ESTA vigente. Prioridad al costo total con flexibilidad de ±2 días. No se compró ni reservó.
 
 Los importes son los observados para dos en Google Vuelos, con impuestos y comisiones; la tarifa final depende del vendedor. No son un mínimo global.
 
@@ -15,6 +15,8 @@ Los importes son los observados para dos en Google Vuelos, con impuestos y comis
 | Alternativa por Europa, sin circunnavegación | 29 | 12 | 5.686 | 2.843,00 |
 
 Excluyen hoteles, comidas, traslados, visados, entradas y seguros. Provisión compartida para la noche en Los Ángeles: US$200–350 por pareja. Las opciones de marzo y Europa añaden dos noches en Japón fuera del subtotal. Terracota suma US$160–200 estimados de tren.
+
+Regreso por Europa: la tarifa Qatar–Iberia de US$2.123 no apareció al recotizar el 18/09 (13:26 y 13:31 UTC); el regreso válido más barato era US$2.673, ≈US$6.234 en total.
 
 **Ganador por costo realizable: «Cinco destinos, menor costo realizable, regreso el 28/02», US$5.506 para dos.** Sustituye el Pekín–Tokio directo (US$536) por Cathay Pacific vía Hong Kong (US$442, un solo itinerario, 5 h 20 de conexión): US$94 menos. El menor aéreo condicionado (HK Express, US$5.399) solo es comparable si U-Connect y su cargo encajan.
 
@@ -74,6 +76,7 @@ Leído en Chrome el 18/09/2026 (06:20–06:31 UTC) en la página de compra de ca
 | LAX-SCL 03/01 | LATAM (Airline): 1.071 | 1 free carry-on per passenger; 1st checked bag per passenger available for a fee | Flight sold as LATAM/Delta codeshare, operated by LATAM. Bag fee info not available when booking with LATAM. |
 | XIY-CAN-HND 02/23 | China Southern (Airline): 978 | 1 free carry-on per passenger; 2 free checked bags per passenger |  |
 | NRT-DOH-MAD-SCL 02/28 | —: no cargó | — | Booking page stayed on 'Getting prices' after 6 s; not verified. |
+| IST-ATH-AMM 02/07 | Aegean (Airline): 278 | 1 free carry-on per passenger; 1st checked bag per passenger available for a fee | Read 2026-09-18T13:28Z (approx.). Google: 'low', US$420 cheaper than usual. Travel update: air traffic disruptions may affect flights. 7 h 20 layover in Athens (non-Schengen to non-Schengen). |
 
 Las agencias más baratas que la aerolínea (Booking.com, Flightnetwork, Gotogate, Mytrip) no muestran tarifa ni equipaje: no se usan en la suma. El filtro de una pieza de mano no acredita peso ni medidas; confirmar en cada web al emitir.
 
@@ -98,6 +101,29 @@ Las agencias más baratas que la aerolínea (Booking.com, Flightnetwork, Gotogat
 
 Señal de precio de Google el 18/09/2026: SCL–IST BA típico; SAW–AMM Pegasus típico; AMM–DEL Air Arabia bajo; DEL–PEK Thai bajo; PEK–HND Cathay bajo; NRT–LAX Zipair típico; LAX–SCL Copa / LATAM típico. Fuentes: [Google Flights, páginas de compra, 18/09/2026](https://www.google.com/travel/flights), [Análisis de datos de Google Flights (Thrifty Traveler)](https://thriftytraveler.com/guides/google-flights/data-analysis/), [Cuándo reservar con Google Flights (Going)](https://www.going.com/guides/best-time-to-book-with-google-flights).
 
+## Optimización de cadena
+
+El script `work/optimize_combination.py` combina todas las observaciones guardadas (89 consultas) respetando las reglas: salida 30/01–03/02, llegada 26/02–02/03, tres jornadas completas por destino, escalas de 3 a 12 h dentro de cada billete y de 24 a 48 h con una noche en Los Ángeles. Mantiene fijo el orden Estambul, Jordania, India, Pekín, Tokio.
+
+| Cadena | Aéreo para dos | Frente a la recomendada | Costo |
+|---|---:|---:|---|
+| Recomendada (Pegasus directo, Cathay, Copa) | 5.506 | — | — |
+| Aegean vía Atenas y todo un día después | 5.477 | -29 | 11 h 10 en vez de 2 h 35; Atenas 7 h 20 de noche |
+| Igual, regreso 2/03 vía Lima | 5.469 | -37 | Dos noches más en Japón |
+| Igual, regreso vía Ciudad de México | 5.467 | -39 | Noche de 10 h en México; Tokio 3 días |
+
+Conclusión: la combinación recomendada está a US$29–39 del mínimo realizable observado; esos ahorros no compensan el tiempo o los días perdidos. Con HK Express condicionado a U-Connect, el mínimo baja a US$5.360. Aegean se verificó en Google: US$278 para dos, un vendedor, pieza de mano incluida.
+
+Límites: el orden de destinos no se permutó. Saltar Jordania o India no es opción; Estambul–Delhi costaba desde US$510 y Amán–Pekín no devolvió tarifas legibles (no prueba ausencia). El orden inverso se probó antes y salió más caro.
+
+## Vigilancia de precios
+
+`work/price_watch.py` recotiza para dos adultos los vuelos exactos de las cinco opciones, guarda cada ejecución en `work/price-watch/` y reescribe `outputs/precios-vigilancia.md`. Si un itinerario desaparece, suma el más barato válido y lo indica. Con `--notify` muestra una notificación de macOS.
+
+Última ejecución: 18/09 13:31 UTC. ahorro_febrero 5.395 (-4); cathay_febrero 5.502 (-4); cathay_marzo 5.537 (-5); terracota_marzo 6.073 (-5); regreso_europa 6.234 (+548).
+
+Programación diaria opcional (no instalada): `cp work/com.vacations2027.pricewatch.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.vacations2027.pricewatch.plist`. Alternativa sin código: botón «Seguir precios» de Google en la página de compra de cada vuelo (enlaces en `booking-links-20260918.json` y en la pestaña Vuelos).
+
 ## Conexiones y condiciones pendientes
 
 Comprar por bloques: SCL–IST, SAW–AMM, AMM–DEL, DEL–PEK, PEK–HND, NRT–LAX y LAX–SCL. Las estancias amortiguan retrasos entre bloques; en LA queda una noche. Dentro de cada bloque, emitir como un solo billete: Google lista cada itinerario con un solo vendedor, pero `self_transfer` sigue siendo desconocido y la protección la fija el contrato de la aerolínea. [Diferencia según British Airways](https://www.britishairways.com/content/information/airport-information/flight-connections).
@@ -118,6 +144,6 @@ Tarifas Basic/Light: BA Basic Economy y Pegasus Saver son las usadas; ambas incl
 ## Evidencia y continuidad
 
 - Datos y auditoría horaria: `outputs/revision-destinos-febrero-2027.json` (generado por `work/build_revision_20260918b.py`).
-- 69 consultas para dos adultos: `work/revision-destinos-20260918/` (fase-1, fase-1-restante, fase-2, fase-3-verificacion). Vendedores: `vendedores-google-20260918.json`; enlaces de compra: `booking-links-20260918.json`.
+- 89 consultas para dos adultos: `work/revision-destinos-20260918/` (fase-1, fase-1-restante, fase-2, fase-3-verificacion, fase-4-barrido). Vendedores: `vendedores-google-20260918.json`; enlaces de compra: `booking-links-20260918.json`.
 - Versión anterior (Pekín–Tokio directo como predeterminado): `historical/revision-antes-cathay-*`.
 - `index.html` se regenera con `python3 work/build_html.py`. Tarifas cambiantes; observaciones, no reservas.
