@@ -1,0 +1,123 @@
+[
+  {
+    "id": "rome",
+    "subject": "Colosseum",
+    "file": "assets/photos/rome.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg",
+    "artist": "FeaturedPics",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized by Wikimedia; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "paris",
+    "subject": "Eiffel Tower",
+    "file": "assets/photos/paris.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tour_eiffel_at_sunrise_from_the_trocadero.jpg",
+    "artist": "Tristan Nitot",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "changes": "Resized by Wikimedia; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "london",
+    "subject": "Big Ben",
+    "file": "assets/photos/london.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Elizabeth_Tower_and_the_north_front_of_the_Palace_of_Westminster,_London.jpg",
+    "artist": "Christian David",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized by Wikimedia; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "madrid",
+    "subject": "Plaza Mayor, Madrid",
+    "file": "assets/photos/madrid.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_(48733706273).jpg",
+    "artist": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "changes": "Resized by Wikimedia; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "barcelona",
+    "subject": "Sagrada Família",
+    "file": "assets/photos/barcelona.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg",
+    "artist": "Canaan",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "changes": "Resized by Wikimedia; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "istanbul",
+    "subject": "Hagia Sophia",
+    "file": "assets/photos/istanbul.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_(228968325).jpeg",
+    "artist": "\nAdli Wahid",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "changes": "Resized by Wikimedia; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "petra",
+    "subject": "Al-Khazneh, Petra",
+    "file": "assets/photos/petra.jpg",
+    "source": "https://unsplash.com/photos/k8-5bWDAklo",
+    "artist": "Andrea Leopardi",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "changes": "Resized; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "agra",
+    "subject": "Taj Mahal, Agra",
+    "file": "assets/photos/agra.jpg",
+    "source": "https://unsplash.com/photos/6GNGSS1sYls",
+    "artist": "Corey Young",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "changes": "Resized; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "beijing",
+    "subject": "Gran Muralla China",
+    "file": "assets/photos/beijing.jpg",
+    "source": "https://unsplash.com/photos/eTcSiwZYA-k",
+    "artist": "Jeremy Huang",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "changes": "Resized; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "tokyo",
+    "subject": "Tokyo Tower y la ciudad",
+    "file": "assets/photos/tokyo.jpg",
+    "source": "https://unsplash.com/photos/FPF6D2cXXDI",
+    "artist": "note thanun",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "changes": "Resized; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  },
+  {
+    "id": "la",
+    "subject": "Los Ángeles",
+    "file": "assets/photos/la.jpg",
+    "source": "https://unsplash.com/photos/z2fkN9iVg5Y",
+    "artist": "Andy Feliciotti",
+    "license": "Unsplash License",
+    "license_url": "https://unsplash.com/license",
+    "changes": "Resized; displayed with CSS crop.",
+    "downloaded_at": "2026-09-18"
+  }
+]
